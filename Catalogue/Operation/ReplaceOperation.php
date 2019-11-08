@@ -97,8 +97,9 @@ final class ReplaceOperation extends AbstractOperation
 
     /**
      * @param MessageCatalogueInterface|MetadataAwareInterface $catalogue
-     * @param string $domain
-     * @param string $key
+     * @param string                                           $domain
+     * @param string                                           $key
+     *
      * @return array|string|mixed|null Can return anything..
      */
     private function getMetadata($catalogue, string $domain, string $key = '')
