@@ -44,9 +44,6 @@ final class TranslationExtension extends AbstractExtension
         $this->debug = $debug;
     }
 
-    /**
-     * @return array
-     */
     public function getFilters(): array
     {
         return [
@@ -55,9 +52,6 @@ final class TranslationExtension extends AbstractExtension
         ];
     }
 
-    /**
-     * @return array
-     */
     public function getNodeVisitors(): array
     {
         $visitors = [
@@ -78,8 +72,6 @@ final class TranslationExtension extends AbstractExtension
      * @param int         $count
      * @param string|null $domain
      * @param string|null $locale
-     *
-     * @return string
      */
     public function transchoiceWithDefault($message, $defaultMessage, $count, array $arguments = [], $domain = null, $locale = null): string
     {

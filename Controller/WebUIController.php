@@ -32,10 +32,6 @@ class WebUIController extends Controller
 {
     /**
      * Show a dashboard for the configuration.
-     *
-     * @param string|null $configName
-     *
-     * @return Response
      */
     public function indexAction(?string $configName = null): Response
     {
@@ -85,12 +81,6 @@ class WebUIController extends Controller
 
     /**
      * Show a catalogue.
-     *
-     * @param string $configName
-     * @param string $locale
-     * @param string $domain
-     *
-     * @return Response
      */
     public function showAction(string $configName, string $locale, string $domain): Response
     {
@@ -125,10 +115,6 @@ class WebUIController extends Controller
     }
 
     /**
-     * @param string $configName
-     * @param string $locale
-     * @param string $domain
-     *
      * @return Response
      */
     public function createAction(Request $request, string $configName, string $locale, string $domain)
@@ -160,13 +146,6 @@ class WebUIController extends Controller
         ]);
     }
 
-    /**
-     * @param string $configName
-     * @param string $locale
-     * @param string $domain
-     *
-     * @return Response
-     */
     public function editAction(Request $request, string $configName, string $locale, string $domain): Response
     {
         if (!$this->getParameter('php_translation.webui.enabled')) {
@@ -189,13 +168,6 @@ class WebUIController extends Controller
         return new Response('Translation updated');
     }
 
-    /**
-     * @param string $configName
-     * @param string $locale
-     * @param string $domain
-     *
-     * @return Response
-     */
     public function deleteAction(Request $request, string $configName, string $locale, string $domain): Response
     {
         if (!$this->getParameter('php_translation.webui.enabled') || !$this->getParameter('php_translation.webui.allow_delete')) {

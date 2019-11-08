@@ -80,11 +80,6 @@ final class CatalogueFetcher
         return $catalogues;
     }
 
-    /**
-     * @param string $domain
-     *
-     * @return bool
-     */
     private function isValidDomain(Configuration $config, string $domain): bool
     {
         $blacklist = $config->getBlacklistDomains();

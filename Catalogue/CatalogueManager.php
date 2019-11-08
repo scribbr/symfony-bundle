@@ -39,9 +39,6 @@ final class CatalogueManager
         }
     }
 
-    /**
-     * @return array
-     */
     public function getDomains(): array
     {
         /** @var MessageCatalogueInterface $c */
@@ -51,9 +48,6 @@ final class CatalogueManager
     }
 
     /**
-     * @param string $locale
-     * @param string $domain
-     *
      * @return CatalogueMessage[]
      */
     public function getMessages(string $locale, string $domain): array
@@ -152,8 +146,6 @@ final class CatalogueManager
      * @param $domain
      * @param $key
      * @param $text
-     *
-     * @return CatalogueMessage
      */
     private function createMessage(MessageCatalogueInterface $catalogue, string $locale, string $domain, string $key, string $text): CatalogueMessage
     {

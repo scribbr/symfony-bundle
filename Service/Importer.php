@@ -50,9 +50,6 @@ final class Importer
      */
     private $defaultLocale;
 
-    /**
-     * @param string $defaultLocale
-     */
     public function __construct(Extractor $extractor, Environment $twig, string $defaultLocale)
     {
         $this->extractor = $extractor;
@@ -68,8 +65,6 @@ final class Importer
      *     @var array $whitelist_domains Whitelist the domains we should include. Cannot be used with blacklist.
      *     @var string $project_root The project root will be removed from the source location.
      * }
-     *
-     * @return ImportResult
      */
     public function extractToCatalogues(Finder $finder, array $catalogues, array $config = []): ImportResult
     {
@@ -155,8 +150,6 @@ final class Importer
     /**
      * @param $key
      * @param $domain
-     *
-     * @return Metadata
      */
     private function getMetadata(MessageCatalogue $catalogue, string $key, string $domain): Metadata
     {
@@ -172,11 +165,6 @@ final class Importer
         $catalogue->setMetadata($key, $metadata->toArray(), $domain);
     }
 
-    /**
-     * @param string $domain
-     *
-     * @return bool
-     */
     private function isValidDomain(string $domain): bool
     {
         if (!empty($this->config['blacklist_domains']) && \in_array($domain, $this->config['blacklist_domains'], true)) {
@@ -191,8 +179,6 @@ final class Importer
 
     /**
      * Make sure the configuration is valid.
-     *
-     * @param array $config
      */
     private function processConfig(array $config): void
     {
